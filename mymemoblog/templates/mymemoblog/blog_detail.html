@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'mymemoblog/css/blog_detail.css' %}">
+{% endblock %}
+
+{% block title %}
+Akito Blog
+{% endblock %}
+
+
+{% block content %}
+<div>
+    <div class="backColor">
+        <h2>{{post.bigtitle}}</h2>
+    </div>
+
+    {% if post.thumnail %}
+    <img src="{{post.thumnail.url}}" alt="サムネ">
+    {% else %}
+    {% endif %}
+{% for fields in post.smallblog.all %}
+    <ul>
+        <div class="backColor">
+            <h3>{{fields.title}}</h3>
+        </div>
+
+        <li class="list">{{fields.text|safe}}</li>
+    </ul>
+<hr/>
+{% endfor %}
+</div>
+
+{% endblock %}
+
+{% block tag %}
+{% for tag in tag_list %}
+<li><a href="#">{{tag}}</a></li>
+{% endfor %}
+{% endblock %}

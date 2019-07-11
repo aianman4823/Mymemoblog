@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'mymemoblog/css/blog_list.css' %}">
+{% endblock %}
+
+{% block title %}
+Akito Blog一覧
+{% endblock %}
+
+{% block content %}
+{% for post in post_list %}
+<div class="list_border">
+    <ul style="margin-left: -30px; margin-right: 10px;">
+        <div class="backColor">
+            <h2>
+                <a href="{% url 'mymemoblog:post_detail' post.id %}">
+                    {{post.bigtitle}}
+                </a>
+            </h2>
+        </div>
+
+        <li class="list">{{post.bigtext}}</li>
+        {% if post.thumnail %}
+        <li class="list"><img src="{{post.thumnail.url}}" alt="サムネイル" class="image"></li>
+        {% else %}
+        {% endif %}
+    </ul>
+</div>
+<br />
+{% endfor %}
+{% endblock %}
+
+
+{% block tag %}
+{% for tag in tag_list %}
+<li><a href="#">{{tag}}</a></li>
+{% endfor %}
+{% endblock %}

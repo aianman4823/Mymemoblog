@@ -1,0 +1,79 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    {% block head %}{% endblock %}
+    <link rel="stylesheet" href="{% static 'mymemoblog/css/base.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+    <div class="border_color">
+        <header class="header">
+            <div>
+                <a class="header_a" href="{% url 'mymemoblog:post_list' %}">ブログ一覧へ</a>
+                <div class="header_title">
+                    <h1>Akito Blog</h1>
+                    <div class="blog_description">
+                        <p>プログラミングについて自分へのメモや助かったサイト、チュートリアルを書いています。
+                            検索するためのキーワードなどもメモっていきます。プログラミングに関してまだまだの部分の方が多いため、
+                            何かミスやこっちの方がいいよ、といったアドバイスがありましたら、コメントやTwitter、FaceBookなどで
+                            ご教授をお願いします。皆様にとって読みやすい、わかりやすいブログサイトになれば幸いです。
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+
+        <main>
+            <div class="wrapper">
+                <div class="content">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+
+
+            <div class="sidebar">
+                <div class="search_form">
+                    <form>
+                        <label for="search" value="サイト内検索">サイト内検索</label><br />
+                        <input id="search" class="form_input" type="text" />
+                        <button class="form_button" type="submit">送信</button>
+                    </form>
+                </div>
+                <!-- 大カテゴリは押したらそれぞれのsmallcategoryの集合ページに飛ぶようにする -->
+                <div class="big_category">
+                    <h4>大カテゴリー</h4>
+                    <ul>
+                        <li><a href="#">プログラミング関連</a></li>
+                        <li><a href="#">大学関連</a></li>
+                        <li><a href="#">起業関連</a></li>
+                    </ul>
+                </div>
+
+                <div class="tag">
+                    <h4>タグ</h4>
+                    <ul>
+                        {% block tag %}{% endblock %}
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>ここはフッターです</p>
+            <div>
+                <small>Copyright Akito MemoBlog All Rights Reserved.</small>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
