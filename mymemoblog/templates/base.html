@@ -43,11 +43,7 @@
 
                 <div class="sidebar">
                     <div class="search_form">
-                        <form>
-                            <label for="search" value="サイト内検索">サイト内検索</label><br />
-                            <input id="search" class="form_input" type="text" />
-                            <button class="form_button" type="submit">送信</button>
-                        </form>
+                        <a href="{% url 'mymemoblog:search' %}">サイト内検索ページへ</a>
                     </div>
                     <!-- 大カテゴリは押したらそれぞれのsmallcategoryの集合ページに飛ぶようにする -->
                     <div class="big_category">
@@ -78,5 +74,4 @@
     </div>
 
 </body>
-
 </html>

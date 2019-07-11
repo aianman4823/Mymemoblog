@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
 {% block head %}
 <link rel="stylesheet" href="{% static 'mymemoblog/css/blog_list.css' %}">
 {% endblock %}
@@ -20,6 +21,19 @@ Akito Blog一覧
                 </a>
             </h2>
         </div>
+        <div class="post_tag ">
+            <small>タグ名: </small>
+            {% for post_tag in post.tag.all %}
+            <small>{{post_tag.name}}</small>
+            {% endfor %}
+            <div class="created_at">
+                    <small>作成日: </small>
+                    <small>{{post.created_at|date:"Y/m/d"}}</small>
+            </div>
+        </div>
+
+        
+
 
         <li class="list">{{post.bigtext}}</li>
         {% if post.thumnail %}
@@ -31,6 +45,7 @@ Akito Blog一覧
 <br />
 {% endfor %}
 {% endblock %}
+
 
 
 {% block tag %}

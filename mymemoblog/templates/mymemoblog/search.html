@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'mymemoblog/css/search.css' %}">
+{% endblock %}
+
+
+
+{% block title %}
+ブログキーワード検索ページ
+{% endblock %}
+
+{% block content %}
+<div class="search_form">
+    <form action="" method="POST">
+        <br>{{ form }}</br>
+        {% csrf_token %}
+        <button class="form_button" type="submit">検索</button>
+    </form>
+</div>
+
+{% if keyword %}
+{% if post_list %}
+{% for post in post_list %}
+<div class="list_border">
+    <ul style="margin-left: -30px; margin-right: 10px;">
+        <div class="backColor">
+            <h2>
+                <a href="{% url 'mymemoblog:post_detail' post.id %}">
+                    {{post.bigtitle}}
+                </a>
+            </h2>
+        </div>
+
+
+        <li class="list">{{post.bigtext}}</li>
+    </ul>
+</div>
+<br />
+{% endfor %}
+{% else %}
+<p>一致する検索結果はありません</p>
+{% endif %}
+{% endif %}
+
+{% endblock %}
+
+{% block tag %}
+{% for tag in tag_list %}
+<li><a href="#">{{tag}}</a></li>
+{% endfor %}
+{% endblock %}
