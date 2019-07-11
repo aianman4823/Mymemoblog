@@ -17,7 +17,7 @@ Akito Blog
     </div>
 
     {% if post.thumnail %}
-    <img src="{{post.thumnail.url}}" alt="サムネ">
+    <img class="image" src="{{post.thumnail.url}}" alt="サムネ">
     {% else %}
     {% endif %}
 {% for fields in post.smallblog.all %}
