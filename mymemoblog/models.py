@@ -84,6 +84,18 @@ class Comment(models.Model):
     text=models.TextField()
     target=models.ForeignKey(Post,on_delete=models.PROTECT,related_name='target')
     created_at=models.DateTimeField(auto_now_add=True)
+    is_public=models.BooleanField(default=False)
 
     def __str__(self):
         return self.text[:10]
+
+
+class Reply(models.Model):
+    name=models.CharField(max_length=255,blank=True)
+    text=models.TextField()
+    target=models.ForeignKey(Comment, on_delete=models.CASCADE)
+    is_public=models.BooleanField(default=False)
+
+
+    def __str__(self):
+        return  self.name

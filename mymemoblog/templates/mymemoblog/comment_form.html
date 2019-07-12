@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'mymemoblog/css/comment_form.css' %}">
+
+{% block content %}
+<h1>コメントフォーム</h1>
+<hr>
+ 
+<form action="" method="POST">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <button class="form_button" type="submit">送信</button>
+</form>
+{% endblock %}
+
+{% block category %}
+{% for category in category_list %}
+<ul>
+    <li><a href="{% url 'mymemoblog:post_category' category.id %}">{{category.name}}</a></li>
+</ul>
+{% endfor %}
+{% endblock %}
+
+
+{% block tag %}
+{% for tag in tag_list %}
+<li><a href="{% url 'mymemoblog:post_tag' tag.id %}">{{tag}}</a></li>
+{% endfor %}
+{% endblock %}

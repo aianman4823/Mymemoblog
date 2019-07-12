@@ -1,9 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404,redirect
+from django.urls import reverse
 
-from .models import Post,BigCategory,Tag
+
+from .models import Post,SmallCategory,Tag,Comment,Reply
+from django.views import View
 
 from django.views import generic
-from .forms import SearchForm, BlogSearchFormSet
+from .forms import SearchForm
 from django.db.models import Q
 
 # Create your views here.
@@ -18,6 +21,7 @@ class PostList(generic.ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context=super().get_context_data(**kwargs)
         context.update({
+            'category_list':SmallCategory.objects.order_by('name'),
             'tag_list':Tag.objects.order_by('name'),
             'more_context':Tag.objects.all(),
         })
@@ -35,6 +39,7 @@ class PostDetail(generic.DetailView):
         context.update({
             'tag_list':Tag.objects.order_by('name'),
             'more_context':Tag.objects.all(),
+            'category_list': SmallCategory.objects.order_by('name'),
         })
         return context
 
@@ -42,7 +47,8 @@ class PostDetail(generic.DetailView):
 
 def index(request):
     form = SearchForm(request.POST or None)
-    tag_list=Tag.objects.all()
+    tag_list=Tag.objects.order_by('name')
+    category_list= SmallCategory.objects.order_by('name')
     if request.method == 'POST':
         form.is_valid()
         keyword = form.cleaned_data.get('keyword')
@@ -54,20 +60,105 @@ def index(request):
         )
 
         if (post_list.count()==0):
-            return render(request, 'mymemoblog/search.html', {'keyword':keyword,'form':form,'tag_list':tag_list})
+            return render(request, 'mymemoblog/search.html', {'keyword':keyword,
+                                                              'form':form,
+                                                              'tag_list':tag_list,
+                                                              'category_list':category_list})
         else:
             context={
                 'keyword':keyword,
                 'form':form,
                 'post_list':post_list,
-                'tag_list': tag_list
+                'tag_list': tag_list,
+                'category_list': category_list,
             }
             return render(request, 'mymemoblog/search.html', context)
 
     else:
-        return render(request,'mymemoblog/search.html',{'form':form,'tag_list':tag_list})
+        return render(request,'mymemoblog/search.html',{'form':form,'tag_list':tag_list,'category_list':category_list})
 
 
+class PostTagView(View):
+
+    def get(self,request,pk):
+        tag=Tag.objects.get(pk=pk)
+        tag_list=Tag.objects.order_by('name')
+        category_list=SmallCategory.objects.order_by('name')
+        post_list=Post.objects.filter(tag=tag)
+
+        context = {
+            'tag_list':tag_list,
+            'tag': tag,
+            'post_list': post_list,
+            'category_list':category_list,
+        }
+
+
+        return render(request,'mymemoblog/blog_tag_list.html',context)
+
+class PostSmallCategory(View):
+    def get(self,request,pk):
+        smallcategory=SmallCategory.objects.get(pk=pk)
+        category_list=SmallCategory.objects.order_by('name')
+        post_list = smallcategory.small_category.order_by('-created_at')
+        tag_list=Tag.objects.order_by('name')
+        context={
+            'smallcategory':smallcategory,
+            'post_list':post_list,
+            'tag_list':tag_list,
+            'category_list':category_list,
+        }
+
+        return render(request,'mymemoblog/blog_category_list.html',context)
+
+
+
+class CommentView(generic.CreateView):
+    #コメント投稿
+    model = Comment
+    fields = ('name','text')
+    template_name = 'mymemoblog/comment_form.html'
+
+    def get_context_data(self, **kwargs):
+        context=super().get_context_data(**kwargs)
+        context.update({
+            'tag_list':Tag.objects.order_by('name'),
+            'more_context':Tag.objects.all(),
+            'category_list': SmallCategory.objects.order_by('name'),
+        })
+        return context
+
+    def form_valid(self, form):
+        post_pk=self.kwargs['pk']
+        post=get_object_or_404(Post,pk=post_pk)
+
+        #紐づく記事を設定する
+        comment=form.save(commit=False)
+        comment.target=post
+        comment.save()
+
+        #記事詳細にリダイレクト
+        return redirect('mymemoblog:post_detail',pk=post.pk)
+
+
+class ReplyView(generic.CreateView):
+    #返信作成view
+    model = Reply
+    fields = ('name','text')
+    template_name = 'mymemoblog/comment_form.html'
+
+    def form_valid(self, form):
+        comment_pk=self.kwargs['pk']
+        comment=get_object_or_404(Comment,pk=comment_pk)
+
+        #ひもづくコメントを設定
+        reply=form.save(commit=False)
+        reply.target=comment
+        reply.save()
+
+
+        #記事詳細にリダイレクト
+        return redirect('mymemoblog:post_detail',pk=comment.target.pk)
 
 
 

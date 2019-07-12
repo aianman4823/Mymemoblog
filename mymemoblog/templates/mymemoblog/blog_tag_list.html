@@ -1,17 +1,18 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
 {% block head %}
-<link rel="stylesheet" href="{% static 'mymemoblog/css/blog_list.css' %}">
+<link rel="stylesheet" href="{% static 'mymemoblog/css/blog_tag_list.css' %}">
 {% endblock %}
 
 {% block title %}
-Akito Blog一覧
+タグ検索
 {% endblock %}
 
+
 {% block content %}
-<h2>ブログ記事一覧/</h2>
+<h2><a href="{% url 'mymemoblog:post_list' %}">記事一覧</a>/{{tag}}</h2>
+
 {% for post in post_list %}
 <div class="list_border">
     <ul style="margin-left: -30px; margin-right: 10px;">
@@ -33,14 +34,8 @@ Akito Blog一覧
             </div>
         </div>
 
-        
-
-
         <li class="list">{{post.bigtext}}</li>
-        {% if post.thumnail %}
-        <li class="list"><img src="{{post.thumnail.url}}" alt="サムネイル" class="image"></li>
-        {% else %}
-        {% endif %}
+        
     </ul>
 </div>
 <br />
@@ -51,7 +46,7 @@ Akito Blog一覧
 {% block category %}
 {% for category in category_list %}
 <ul>
-    <li><a href="{% url 'mymemoblog:post_category' category.id %}">{{category.name}}</a></li>
+    <li><a href="{% url 'mymemoblog:post_category' category.id %}">{{category}}</a></li>
 </ul>
 {% endfor %}
 {% endblock %}

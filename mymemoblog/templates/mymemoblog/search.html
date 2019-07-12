@@ -46,8 +46,18 @@
 
 {% endblock %}
 
+
+{% block category %}
+{% for category in category_list %}
+<ul>
+    <li><a href="{% url 'mymemoblog:post_category' category.id %}">{{category}}</a></li>
+</ul>
+{% endfor %}
+{% endblock %}
+
+
 {% block tag %}
 {% for tag in tag_list %}
-<li><a href="#">{{tag}}</a></li>
+<li><a href="{% url 'mymemoblog:post_tag' tag.id %}">{{tag}}</a></li>
 {% endfor %}
 {% endblock %}

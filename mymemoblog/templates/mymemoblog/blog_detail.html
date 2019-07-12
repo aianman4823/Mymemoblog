@@ -12,6 +12,7 @@ Akito Blog
 
 {% block content %}
 <div>
+    <h2><a href="{% url 'mymemoblog:post_list' %}">記事一覧</a>/詳細</h2>
     <div class="backColor">
         <h2>{{post.bigtitle}}</h2>
     </div>
@@ -20,7 +21,7 @@ Akito Blog
     <img class="image" src="{{post.thumnail.url}}" alt="サムネ">
     {% else %}
     {% endif %}
-{% for fields in post.smallblog.all %}
+    {% for fields in post.smallblog.all %}
     <ul>
         <div class="backColor">
             <h3>{{fields.title}}</h3>
@@ -28,14 +29,62 @@ Akito Blog
 
         <li class="list">{{fields.text|safe}}</li>
     </ul>
-<hr/>
-{% endfor %}
+    <hr />
+    {% endfor %}
 </div>
 
 {% endblock %}
+
+
+{% block category %}
+{% for category in category_list %}
+<ul>
+    <li><a href="{% url 'mymemoblog:post_category' category.id %}">{{category}}</a></li>
+</ul>
+{% endfor %}
+{% endblock %}
+
 
 {% block tag %}
 {% for tag in tag_list %}
 <li><a href="#">{{tag}}</a></li>
 {% endfor %}
+{% endblock %}
+
+
+{% block comment %}
+<div style="position: relative; left:50px;" class="comment_list">
+    <h2>コメント一覧</h2>
+    <a href="{% url 'mymemoblog:comment' post.pk %}">コメントする</a>
+    <br>
+    <br>
+    <div class="box2">
+        {% for comment in post.target.all %}
+        {% if comment.is_public %}
+
+        <p>名前:{{ comment.name }}</p>
+        <p style="padding-right: 150px;">テキスト:{{ comment.text }}</p>
+            <a href="{% url 'mymemoblog:reply' comment.pk %}">返信する</a><br>
+
+            <div style="margin-left:80px;" class="box3">
+                {% for reply in comment.reply_set.all %}
+                {% if reply.is_public %}
+                <p>名前:{{ reply.name }}</p>
+                <p style="padding-right: 50px;">テキスト:{{ reply.text }}</p>
+                {% else %}
+                <p>まだ承認されていません。(返信コメント)</p>
+                {% endif %}
+
+                {% endfor %}
+            </div>
+
+    </div>
+
+    {% else %}
+    <p>まだ承認されていません。(コメント)</p>
+    {% endif %}
+    <br>
+    {% endfor %}
+</div>
+
 {% endblock %}

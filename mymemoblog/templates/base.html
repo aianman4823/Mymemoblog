@@ -47,12 +47,8 @@
                     </div>
                     <!-- 大カテゴリは押したらそれぞれのsmallcategoryの集合ページに飛ぶようにする -->
                     <div class="big_category">
-                        <h4>大カテゴリー</h4>
-                        <ul>
-                            <li><a href="#">プログラミング関連</a></li>
-                            <li><a href="#">大学関連</a></li>
-                            <li><a href="#">起業関連</a></li>
-                        </ul>
+                        <h4>カテゴリー</h4>
+                        {% block category %}{% endblock %}
                     </div>
 
                     <div class="tag">
@@ -65,7 +61,8 @@
             </main>
 
             <footer class="footer">
-                <p>ここはフッターです</p>
+                {% block comment %}
+                {% endblock %}
                 <div>
                     <small>Copyright Akito MemoBlog All Rights Reserved.</small>
                 </div>
