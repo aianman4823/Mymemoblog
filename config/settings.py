@@ -78,10 +78,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mymemoblog',
-        'USER': 'akito',
-        'PASSWORD':'Akito4823',
-        'HOST': '127.0.0.1',
+        'NAME': 'd1ctsuzrfarml79b',
+        'USER': 'lzcxl3p284r9h50y',
+        'PASSWORD':'onbqwnui7o3xid2b',
+        'HOST': 'yhrz9vns005e0734.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
         'PORT': '3306',
         'ATOMIC_REQUESTS':True,
         'OPTIONS':{
