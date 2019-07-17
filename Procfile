@@ -1,1 +1,1 @@
-web: gunicorn memo-blog.config.wsgi --log-file -
+web: gunicorn memo_blog.config.wsgi --log-file -
