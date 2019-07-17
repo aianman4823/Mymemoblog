@@ -24,7 +24,7 @@ Akito Blog
     {% for fields in post.smallblog.all %}
     <ul>
         <div class="backColor">
-            <h3>{{fields.title}}</h3>
+            <h3>{{fields.title|safe}}</h3>
         </div>
 
         <li class="list">{{fields.text|safe}}</li>

@@ -18,7 +18,7 @@ Akito Blog一覧
         <div class="backColor">
             <h2>
                 <a href="{% url 'mymemoblog:post_detail' post.id %}">
-                    {{post.bigtitle}}
+                    {{post.bigtitle|safe}}
                 </a>
             </h2>
         </div>
