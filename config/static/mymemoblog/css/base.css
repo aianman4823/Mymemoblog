@@ -1,0 +1,166 @@
+.border_color {
+    padding: 3px;
+    border: 3px solid #d6d680;
+    border-radius:10px;
+}
+.border_color_2 {
+    padding: 3px;
+    border: 3px solid #7e9895;
+    border-radius:10px;
+}
+
+.header {
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius:10px;
+}
+
+.header_a {
+    position: relative;
+    top:20px;
+    left:20px;
+    color: black;
+    text-decoration: none;
+}
+
+.header_a:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+
+
+.header_title{
+    text-align: center;
+}
+
+.blog_description {
+    padding: 0 10%;
+}
+
+.wrapper {
+    float: right;
+    margin: 0;
+    width: 100%;
+    margin-left: -250px;
+}
+
+.content {
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius:10px;
+    margin-left: 250px;
+    padding: 30px;
+}
+
+.sidebar {
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius:10px;
+    width: 250px;
+    height: auto;
+    position:relative;
+}
+
+.footer {
+    clear:both;
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius:10px;
+}
+
+@media (max-width: 1000px) {
+    .wrapper, .content, .sidebar {
+         float: none;
+         margin: 0;
+         width: auto;
+    }
+}
+
+.image{
+    max-width: 100%;
+    height: auto;
+    display:block;
+}
+
+.list{
+    list-style: none;
+}
+
+
+
+.big_category {
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.3);
+    margin:20px;
+    padding:25px 10px 10px;
+    position: relative;
+}
+
+.big_category>h4 {
+    position: absolute;
+    top:-5px;
+    left:20px;
+}
+
+.search_form {
+    left:35px;
+    top:5px;
+    position:relative;
+}
+
+.form_button {
+    font-weight: bold;
+
+
+    /* ボーダーをなくす */
+    border-style: none;
+    /* ボタンの影の指定
+     * 影の横幅を2px
+     * 縦長を2px
+     * ぼかしを3px
+     * 広がりを1px
+     * 色を#666（グレー）に指定 */
+    box-shadow: 2px 2px 3px 1px #666;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.form_button:hover{
+    opacity:0.5;
+}
+
+.form_input {
+    -webkit-box-shadow: 0px 1px rgba(255, 255, 255, 0.5);
+    -moz-box-shadow: 0px 1px rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 1px rgba(255, 255, 255, 0.5);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.tag {
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.3);
+    margin:20px;
+    padding:25px 10px 10px;
+    position: relative;
+}
+
+.tag>h4{
+    position: absolute;
+    top:-5px;
+    left:20px;
+}
+
+
+a {
+    text-decoration: none;
+    color:black;
+}
+
+a:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.backColor {
+    background-color: rgba(190,190 ,190 ,0.4);
+}
+
