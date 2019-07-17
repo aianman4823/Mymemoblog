@@ -23,7 +23,7 @@ from . import parameters
 SECRET_KEY=parameters.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['memo-blog.herokuapp.com']
 
