@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="600e7a3a-edc6-4e4f-bbc1-10bd5f10676a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mymemoblog/templates/mymemoblog/blog_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/mymemoblog/templates/mymemoblog/blog_list.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +28,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mymemoblog/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1904">
+            <state relative-caret-position="2222">
               <caret line="162" lean-forward="true" selection-start-line="162" selection-end-line="162" />
             </state>
           </provider>
@@ -63,8 +64,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mymemoblog/templates/mymemoblog/blog_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+            <state relative-caret-position="363">
+              <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
+              <folding>
+                <element signature="e#1434#1441#1" expanded="true" />
+                <element signature="e#2126#2133#1" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -72,8 +77,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mymemoblog/templates/mymemoblog/blog_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="35" />
+            <state relative-caret-position="133">
+              <caret line="47" column="15" lean-forward="true" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -250,7 +255,7 @@
   <component name="ToolWindowManager">
     <frame x="751" y="26" width="689" height="753" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29041916" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20958084" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -472,24 +477,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mymemoblog/views.py">
+    <entry file="file://$PROJECT_DIR$/mymemoblog/templates/mymemoblog/blog_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1904">
-          <caret line="162" lean-forward="true" selection-start-line="162" selection-end-line="162" />
+        <state relative-caret-position="133">
+          <caret line="47" column="15" lean-forward="true" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mymemoblog/templates/mymemoblog/blog_detail.html">
+    <entry file="file://$PROJECT_DIR$/mymemoblog/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="35" />
+        <state relative-caret-position="2222">
+          <caret line="162" lean-forward="true" selection-start-line="162" selection-end-line="162" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mymemoblog/templates/mymemoblog/blog_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+        <state relative-caret-position="363">
+          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
+          <folding>
+            <element signature="e#1434#1441#1" expanded="true" />
+            <element signature="e#2126#2133#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
