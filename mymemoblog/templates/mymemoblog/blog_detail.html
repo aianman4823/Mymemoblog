@@ -47,7 +47,7 @@ Akito Blog
 
 {% block tag %}
 {% for tag in tag_list %}
-<li><a href="#">{{tag}}</a></li>
+<li><a href="{% url 'mymemoblog:post_tag' tag.id %}">{{tag}}</a></li>
 {% endfor %}
 {% endblock %}
 
