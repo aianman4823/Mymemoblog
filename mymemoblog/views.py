@@ -1,5 +1,6 @@
 from django.shortcuts import render,get_object_or_404,redirect
 from django.urls import reverse
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 from .models import Post,SmallCategory,Tag,Comment,Reply
@@ -10,6 +11,17 @@ from .forms import SearchForm
 from django.db.models import Q
 
 # Create your views here.
+
+def paginate_query(request, queryset, count):
+  paginator = Paginator(queryset, count)
+  page = request.GET.get('page')
+  try:
+    page_obj = paginator.page(page)
+  except PageNotAnInteger:
+    page_obj = paginator.page(1)
+  except EmptyPage:
+    page_obj = paginator.page(paginator.num_pages)
+  return page_obj
 
 #Post List 取得 一覧取得
 class PostList(generic.ListView):
@@ -85,12 +97,13 @@ class PostTagView(View):
         tag_list=Tag.objects.order_by('name')
         category_list=SmallCategory.objects.order_by('name')
         post_list=Post.objects.filter(tag=tag)
-
+        page_obj=paginate_query(post_list,10)
         context = {
             'tag_list':tag_list,
             'tag': tag,
             'post_list': post_list,
             'category_list':category_list,
+            'page_obj':page_obj,
         }
 
 
@@ -102,11 +115,13 @@ class PostSmallCategory(View):
         category_list=SmallCategory.objects.order_by('name')
         post_list = smallcategory.small_category.order_by('-created_at')
         tag_list=Tag.objects.order_by('name')
+        page_obj=paginate_query(post_list,10)
         context={
             'smallcategory':smallcategory,
             'post_list':post_list,
             'tag_list':tag_list,
             'category_list':category_list,
+            'page_obj':page_obj
         }
 
         return render(request,'mymemoblog/blog_category_list.html',context)
