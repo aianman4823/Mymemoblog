@@ -97,7 +97,7 @@ class PostTagView(View):
         tag_list=Tag.objects.order_by('name')
         category_list=SmallCategory.objects.order_by('name')
         post_list=Post.objects.filter(tag=tag)
-        page_obj=paginate_query(post_list,10)
+        page_obj=paginate_query(request,post_list,10)
         context = {
             'tag_list':tag_list,
             'tag': tag,
@@ -115,7 +115,7 @@ class PostSmallCategory(View):
         category_list=SmallCategory.objects.order_by('name')
         post_list = smallcategory.small_category.order_by('-created_at')
         tag_list=Tag.objects.order_by('name')
-        page_obj=paginate_query(post_list,10)
+        page_obj=paginate_query(request,post_list,10)
         context={
             'smallcategory':smallcategory,
             'post_list':post_list,
