@@ -37,8 +37,10 @@ class PostList(generic.ListView):
             'tag_list':Tag.objects.order_by('name'),
             'more_context':Tag.objects.all(),
         })
-        post_list=Post.objects.all().order_by('-created_at')[:10]
         return context
+
+    def get_queryset(self):
+        return super().get_queryset().filter(is_publick=True).order_by('-created_at')
 
 
 #Post Detail 取得 詳細なブログを獲得する
@@ -69,7 +71,7 @@ def index(request):
         post_list=Post.objects.filter(
             Q(bigtitle__contains=keyword)|
             Q(bigtext__contains=keyword)
-        )
+        ).order_by('-created_at')
 
         if (post_list.count()==0):
             return render(request, 'mymemoblog/search.html', {'keyword':keyword,
@@ -96,7 +98,7 @@ class PostTagView(View):
         tag=Tag.objects.get(pk=pk)
         tag_list=Tag.objects.order_by('name')
         category_list=SmallCategory.objects.order_by('name')
-        post_list=Post.objects.filter(tag=tag)
+        post_list=Post.objects.filter(tag=tag).order_by('-created_at')
         page_obj=paginate_query(request,post_list,10)
         context = {
             'tag_list':tag_list,
