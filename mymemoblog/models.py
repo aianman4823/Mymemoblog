@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.sitemaps import ping_google
 
 # Create your models here.
 
@@ -74,6 +75,14 @@ class Post(models.Model):
 
     def __str__(self):
         return self.bigtitle
+
+
+    def save(self,*args,**kwargs):
+        super().save(*args,**kwargs)
+        try:
+            ping_google()
+        except Exception:
+            pass
 
 
 

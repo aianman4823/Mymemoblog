@@ -1,7 +1,9 @@
 from django.shortcuts import render,get_object_or_404,redirect
 from django.urls import reverse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-
+from django.contrib.auth.decorators import login_required
+from django.urls import resolve
+from django.contrib.sitemaps import ping_google
 
 from .models import Post,SmallCategory,Tag,Comment,Reply
 from django.views import View
@@ -178,7 +180,15 @@ class ReplyView(generic.CreateView):
         return redirect('mymemoblog:post_detail',pk=comment.target.pk)
 
 
-
+@login_required
+def ping(request):
+    try:
+        url=resolve('sitemap')
+        ping_google(sitemap_url=url)
+    except Exception:
+        raise
+    else:
+        return redirect('mymemoblog:post_list')
 
 
 
