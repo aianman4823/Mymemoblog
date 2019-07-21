@@ -1,11 +1,11 @@
-from django.contrib.sitemaps import  Sitemap
+from django.contrib.sitemaps import Sitemap
 from django.urls import reverse
 
 from mymemoblog.models import Post
 
 
 
-class MyMemoBlogSitemap(Sitemap):
+class PostSitemap(Sitemap):
     changereq="never"
     priority=0.8
 
