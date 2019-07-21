@@ -25,8 +25,7 @@ class StaticViewSitemap(Sitemap):
     priority=0.5
 
     def items(self):
-        return ['mymemoblog:post_list','mymemoblog:post_category',
-                'mymemoblog:post_tag','mymemoblog:comment','mymemoblog:search','mymemoblog:reply']
+        return ['mymemoblog:post_list','mymemoblog:search']
 
     def location(self, item):
         return reverse(item)
