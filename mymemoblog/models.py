@@ -68,7 +68,7 @@ class Post(models.Model):
     category=models.ForeignKey(SmallCategory,on_delete=models.PROTECT,related_name='small_category')
     tag=models.ManyToManyField(Tag,blank=False)
     thumnail=models.ImageField(upload_to='images/', null=True, blank=True)
-    is_public=models.BooleanField(default=True)
+    is_publick=models.BooleanField(default=True)
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now=True)
 

@@ -10,7 +10,7 @@ class PostSitemap(Sitemap):
     priority=0.8
 
     def items(self):
-        return Post.objects.filter(is_public=True)
+        return Post.objects.filter(is_publick=True)
 
 
     def location(self, obj):
