@@ -73,7 +73,7 @@ def index(request):
         post_list=Post.objects.filter(
             Q(bigtitle__contains=keyword)|
             Q(bigtext__contains=keyword)
-        ).order_by('-created_at')
+        ).filter(is_publick=True).order_by('-created_at')
 
         if (post_list.count()==0):
             return render(request, 'mymemoblog/search.html', {'keyword':keyword,
@@ -100,7 +100,7 @@ class PostTagView(View):
         tag=Tag.objects.get(pk=pk)
         tag_list=Tag.objects.order_by('name')
         category_list=SmallCategory.objects.order_by('name')
-        post_list=Post.objects.filter(tag=tag).order_by('-created_at')
+        post_list=Post.objects.filter(tag=tag).filter(is_publick=True).order_by('-created_at')
         page_obj=paginate_query(request,post_list,10)
         context = {
             'tag_list':tag_list,
@@ -117,7 +117,7 @@ class PostSmallCategory(View):
     def get(self,request,pk):
         smallcategory=SmallCategory.objects.get(pk=pk)
         category_list=SmallCategory.objects.order_by('name')
-        post_list = smallcategory.small_category.order_by('-created_at')
+        post_list = smallcategory.small_category.filter(is_publick=True).order_by('-created_at')
         tag_list=Tag.objects.order_by('name')
         page_obj=paginate_query(request,post_list,10)
         context={
