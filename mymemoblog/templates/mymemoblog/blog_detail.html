@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block title %}
-Akito Blog 詳細
+Akito Blog 詳細 <noscript>{{post.bigtitle}}{{post.bigtext}}</noscript>
 {% endblock %}
 
 
@@ -14,7 +14,7 @@ Akito Blog 詳細
 <div>
     <h2><a href="{% url 'mymemoblog:post_list' %}">記事一覧</a>/詳細</h2>
     <div class="backColor">
-        <h2>{{post.bigtitle}}</h2>
+        <h2><strong>{{post.bigtitle}}</strong></h2>
     </div>
 
     {% if post.thumnail %}
