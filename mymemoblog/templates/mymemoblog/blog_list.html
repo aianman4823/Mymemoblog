@@ -46,35 +46,28 @@ Akito Blog プログラミング初心者からの脱却
 <br />
 {% endfor %}
 <nav aria-label="ページネーション">
-    <ul class="pagination">
-        {% if page_obj.has_previous %}
-        <li class="page-item">
-            <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="前へ">
-                <span aria-hidden='true'>&laquo;</span>
-            </a>
-        </li>
-        {% endif %}
+    {% for post in post_list %}
+        <p>{{ post.title }}</p>
+    {% endfor %}
 
-        {% for page_num in page_obj.paginator.page_range %}
-        {% if page_num == page_obj.number %}
-        <li class="page-item active">
-            <a class="page-link" href="?page={{ page_num }}">{{ page_num }}</a>
-        </li>
+    <!-- 前へ の部分 -->
+    {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}">前へ</a>
+    {% endif %}
+
+    <!-- 数字の部分 -->
+    {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+            <span>{{ num }}</span>
         {% else %}
-        <li class="page-item">
-            <a class="page-link" href="?page={{ page_num }}">{{ page_num }}</a>
-        </li>
+            <a href="?page={{ num }}">{{ num }}</a>
         {% endif %}
-        {% endfor %}
+    {% endfor %}
 
-        {% if page_obj.has_next %}
-        <li class="page-item">
-            <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="次へ">
-                <span aria-hidden="true">&raquo;</span>
-            </a>
-        </li>
-        {% endif %}
-    </ul>
+    <!-- 次へ の部分 -->
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">次へ</a>
+    {% endif %}
 </nav>
 
 
