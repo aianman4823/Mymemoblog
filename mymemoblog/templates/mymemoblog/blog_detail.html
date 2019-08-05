@@ -14,7 +14,7 @@ Akito Blog ({{post.bigtitle}})
 <div>
     <h2><a href="{% url 'mymemoblog:post_list' %}">記事一覧</a>/詳細</h2>
     <div class="backColor">
-        <h2><strong>{{post.bigtitle}}</strong></h2>
+        <h1 style="font-size:25px"><strong>{{post.bigtitle}}</strong></h1>
     </div>
 
     {% if post.thumnail %}
@@ -22,13 +22,13 @@ Akito Blog ({{post.bigtitle}})
     {% else %}
     {% endif %}
     {% for fields in post.smallblog.all %}
-    <ul>
+
         <div class="backColor">
             <h3>{{fields.title | safe}}</h3>
         </div>
 
-        <li class="list">{{fields.text|safe}}</li>
-    </ul>
+        <span>{{fields.text|safe}}</span>
+
     <hr />
     {% endfor %}
     <a  href="{% url 'mymemoblog:post_list' %}">ブログ一覧へ</a>
