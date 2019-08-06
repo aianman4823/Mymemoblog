@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="600e7a3a-edc6-4e4f-bbc1-10bd5f10676a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymemoblog/static/mymemoblog/css/blog_detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/mymemoblog/static/mymemoblog/css/blog_detail.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymemoblog/static/mymemoblog/css/blog_list.css" beforeDir="false" afterPath="$PROJECT_DIR$/mymemoblog/static/mymemoblog/css/blog_list.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymemoblog/static/mymemoblog/css/blog_tag_list.css" beforeDir="false" afterPath="$PROJECT_DIR$/mymemoblog/static/mymemoblog/css/blog_tag_list.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymemoblog/static/mymemoblog/css/comment_form.css" beforeDir="false" afterPath="$PROJECT_DIR$/mymemoblog/static/mymemoblog/css/comment_form.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymemoblog/static/mymemoblog/css/search.css" beforeDir="false" afterPath="$PROJECT_DIR$/mymemoblog/static/mymemoblog/css/search.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mymemoblog/templates/mymemoblog/blog_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/mymemoblog/templates/mymemoblog/blog_detail.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,15 +12,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mymemoblog/static/mymemoblog/css/base.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="168" selection-start-line="168" selection-end-line="168" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mymemoblog/static/mymemoblog/css/comment_form.css">
           <provider selected="true" editor-type-id="text-editor">
@@ -38,15 +23,6 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mymemoblog/static/mymemoblog/css/blog_detail.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mymemoblog/static/mymemoblog/css/search.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
               <caret line="11" selection-start-line="11" selection-end-line="11" />
@@ -66,26 +42,48 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mymemoblog/templates/mymemoblog/blog_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+            <state relative-caret-position="135">
+              <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+              <folding>
+                <element signature="e#355#377#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mymemoblog/templates/mymemoblog/blog_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="214">
+              <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+              <folding>
+                <element signature="e#412#434#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="232">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/static/mymemoblog/css/base.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="166" selection-start-line="166" selection-end-line="166" />
+            <state relative-caret-position="2385">
+              <caret line="159" column="17" selection-start-line="159" selection-start-column="17" selection-end-line="159" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/static/admin/css/base.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-539" />
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -154,7 +152,6 @@
         <option value="$PROJECT_DIR$/config/urls.py" />
         <option value="$PROJECT_DIR$/mymemoblog/templates/mymemoblog/blog_category_list.html" />
         <option value="$PROJECT_DIR$/mymemoblog/templates/mymemoblog/blog_tag_list.html" />
-        <option value="$PROJECT_DIR$/mymemoblog/templates/mymemoblog/blog_list.html" />
         <option value="$PROJECT_DIR$/mymemoblog/templates/base.html" />
         <option value="$PROJECT_DIR$/mymemoblog/static/mymemoblog/css/search.css" />
         <option value="$PROJECT_DIR$/mymemoblog/static/mymemoblog/css/comment_form.css" />
@@ -162,9 +159,10 @@
         <option value="$PROJECT_DIR$/mymemoblog/static/mymemoblog/css/blog_list.css" />
         <option value="$PROJECT_DIR$/mymemoblog/static/mymemoblog/css/blog_detail.css" />
         <option value="$PROJECT_DIR$/mymemoblog/static/mymemoblog/css/base.css" />
-        <option value="$PROJECT_DIR$/mymemoblog/templates/mymemoblog/blog_detail.html" />
         <option value="$PROJECT_DIR$/config/static/mymemoblog/css/blog_detail.css" />
         <option value="$PROJECT_DIR$/config/static/mymemoblog/css/base.css" />
+        <option value="$PROJECT_DIR$/mymemoblog/templates/mymemoblog/blog_list.html" />
+        <option value="$PROJECT_DIR$/mymemoblog/templates/mymemoblog/blog_detail.html" />
       </list>
     </option>
   </component>
@@ -205,14 +203,6 @@
               <item name="config" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="mymemoblog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="memo_blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="memo_blog" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="mymemoblog" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="memo_blog" type="b2602c69:ProjectViewProjectNode" />
@@ -313,7 +303,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="583" y="25" width="857" height="753" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16746412" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -400,13 +389,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
@@ -514,13 +496,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mymemoblog/templates/mymemoblog/blog_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="63" column="19" selection-start-line="63" selection-start-column="19" selection-end-line="63" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mymemoblog/static/mymemoblog/css/search.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -528,23 +503,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mymemoblog/static/mymemoblog/css/blog_list.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mymemoblog/static/mymemoblog/css/blog_detail.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mymemoblog/static/mymemoblog/css/base.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
+        <state relative-caret-position="2520">
           <caret line="168" selection-start-line="168" selection-end-line="168" />
         </state>
       </provider>
@@ -553,6 +514,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mymemoblog/static/mymemoblog/css/blog_detail.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
@@ -565,10 +533,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mymemoblog/templates/mymemoblog/blog_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+        <state relative-caret-position="135">
+          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+          <folding>
+            <element signature="e#355#377#0" expanded="true" />
+          </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/static/mymemoblog/css/base.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2385">
+          <caret line="159" column="17" selection-start-line="159" selection-start-column="17" selection-end-line="159" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/static/admin/css/base.css">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/config/static/mymemoblog/css/blog_detail.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -577,15 +558,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/static/admin/css/base.css">
+    <entry file="file://$PROJECT_DIR$/mymemoblog/static/mymemoblog/css/blog_list.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-539" />
+        <state relative-caret-position="225">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/static/mymemoblog/css/base.css">
+    <entry file="file://$PROJECT_DIR$/mymemoblog/templates/mymemoblog/blog_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="166" selection-start-line="166" selection-end-line="166" />
+        <state relative-caret-position="214">
+          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+          <folding>
+            <element signature="e#412#434#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
