@@ -6,7 +6,7 @@ import sys
 
 def main():
     # os.environ.setdefault("DJANGO_SETTINGS_MODULE",
-    #                       "memo_blog.config.local_settings")
+    #                       "config.local_settings")
     os.environ.setdefault("DJANGO_SETTINGS_MODULE",
                           "config.settings")
     try:
@@ -22,6 +22,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-import  pymysql
-pymysql.install_as_MySQLdb()
